@@ -1,4 +1,4 @@
-# redux-boilerplate [![Build Status](https://travis-ci.org/fahad19/redux-boilerplate.svg?branch=master)](https://travis-ci.org/fahad19/redux-boilerplate)
+# redux-boilerplate [![Travis Build Status](https://travis-ci.org/fahad19/redux-boilerplate.svg?branch=master)](https://travis-ci.org/fahad19/redux-boilerplate)
 
 > Boilerplate generator for Redux
 
