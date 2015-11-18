@@ -1,0 +1,38 @@
+{
+  "name": "redux-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate generator for Redux",
+  "license": "MIT",
+  "repository": "fahad19/redux-boilerplate",
+  "author": {
+    "name": "Fahad Ibnay Heylaal",
+    "url": "fahad19.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "babel": "babel src --out-dir lib",
+    "eslint": "eslint src",
+    "mocha": "mocha --compilers js:babel-core/register test/*.js",
+    "test": "run-scripts babel eslint mocha"
+  },
+  "keywords": [
+    "redux",
+    "boilerplate",
+    "react"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "~6.1.18",
+    "babel-cli": "~6.1.18",
+    "babel-core": "~6.1.21",
+    "babel-eslint": "~4.1.5",
+    "babel-preset-es2015": "~6.1.18",
+    "babel-preset-stage-0": "~6.1.18",
+    "eslint": "~1.9.0",
+    "expect.js": "~0.3.1",
+    "mocha": "~2.3.4",
+    "run-scripts": "~0.4.0"
+  }
+}
