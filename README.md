@@ -22,10 +22,13 @@ Examples are in ES6/7. If you are building React applications, you are highly re
 
 ### Generating Action Creators
 
+Redux recommends generating Action objects through a function (action creator).
+
+#### Before
+
 In action generators file, you may export some functions like this:
 
 ```js
-// BEFORE
 // file: ./actions/todos.js
 const ADD_TODO = 'ADD_TODO';
 
@@ -37,10 +40,11 @@ export function addTodo(text) {
 }
 ```
 
+#### After
+
 The code above can be written like this instead using `redux-boilerplate`:
 
 ```js
-// AFTER
 // file: ./actions/todos.js
 import { makeActionCreator } from 'redux-boilerplate';
 
@@ -53,10 +57,9 @@ export const addTodo = makeActionCreator(ADD_TODO, 'text');
 
 When you have smart React components (often called container components), you are expected to pass `mapStateToProps` and occassionally `mapDispatchToProps` functions to `react-redux`'s `connect()`.
 
-For e.g., in here:
+#### Before
 
 ```js
-// BEFORE
 // file: ./containers/Todos.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -88,15 +91,18 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);
 ```
 
+#### After
+
 The above code for `mapDispatchToProps` can be written in a much shorter form as:
 
 ```js
-// AFTER
 // file: ./containers/Todos.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { makeDispatchMapper } from 'redux-boilerplate';
+
+import { addTodo } from '../actions/todos';
 
 class Todos extends Component {
 	// ...
@@ -113,15 +119,18 @@ const mapDispatchToProps = makeDispatchMapper({
 export default connect(mapStateToProps, mapDispatchToProps)(Todos);
 ```
 
+---
+
 If you are using ES7 decorators, you could write it in a more readable form too:
 
 ```js
-// AFTER
 // file: ./containers/Todos.js
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { makeDispatchMapper } from 'redux-boilerplate';
+
+import { addTodo } from '../actions/todos';
 
 function mapStateToProps(state) {
   return {};
