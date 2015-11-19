@@ -18,6 +18,11 @@ This package is aimed at projects using:
 
 Examples are in ES6/7. If you are building React applications, you are highly recommended to use [Babel](https://babeljs.io/) for transpiling ES6/7 to ES5, mostly via tools like [Webpack](https://github.com/webpack/webpack) or [Browserify](https://github.com/substack/node-browserify).
 
+## API
+
+* [makeActionCreator](#generating-action-creators)
+* [makeDispatchMapper](#generating-mapdispatchtoprops)
+
 ## Usage
 
 ### Generating Action Creators
