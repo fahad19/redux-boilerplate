@@ -72,9 +72,13 @@ import { connect } from 'react-redux';
 import { addTodo } from '../actions/todos';
 
 class Todos extends Component {
+  handleClick() {
+    this.props.addTodo('blah');
+  }
+
   render() {
     return (
-      <a onClick={this.props.addTodo('blah')}>
+      <a onClick={this.handleClick}>
         Add Todo
       </a>
     );
