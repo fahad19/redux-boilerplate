@@ -155,6 +155,25 @@ export default class Todos extends Component {
 }
 ```
 
+#### Separating mapped actions in your properties
+
+If your app contains a large number of actions, you may wish to have them all mapped to an object under a specific key in your properties. Just pass a second argument with the desired key name to makeDispatchMapper, e.g:
+
+```js
+const mapDispatchToProps = makeDispatchMapper({
+	addTodo
+}, 'actions');  // Put them all in component's this.props.actions
+
+/**
+ * This will give props like:
+ * {
+ *   actions: {
+ *     addTodo: function() {...}
+ *   }
+ * }
+ */
+```
+
 ## License
 
 MIT © [Fahad Ibnay Heylaal](http://fahad19.com)
